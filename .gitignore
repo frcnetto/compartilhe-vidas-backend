@@ -1,4 +1,6 @@
 /target/
+/.metadata/
+/.vscode/
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
