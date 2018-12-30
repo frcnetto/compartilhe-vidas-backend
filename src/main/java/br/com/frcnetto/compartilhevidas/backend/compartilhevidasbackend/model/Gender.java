@@ -2,16 +2,16 @@ package br.com.frcnetto.compartilhevidas.backend.compartilhevidasbackend.model;
 
 public enum Gender {
   
-  MASCULINE('M'),
-  FEMININE('F');	
+  MASCULINE("MASCULINE"),
+  FEMININE("FEMININE");	
   
-  private char gender;
+  private String gender;
 
-  Gender( char gender ){
+  Gender( String gender ){
     this.gender = gender;
   }
 
-  public char getGender(){
+  public String getGender(){
     return gender;
   }
   

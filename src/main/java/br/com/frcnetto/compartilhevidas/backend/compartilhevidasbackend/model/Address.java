@@ -7,7 +7,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
 @Entity
-@Table( name = "ADRESSES" )
+@Table( name = "ADDRESSES" )
 public class Address extends AbstractEntity<Long>{
 
   private static final long serialVersionUID = 1L;
@@ -33,5 +33,62 @@ public class Address extends AbstractEntity<Long>{
 
 	@Column
 	private String complement;
+
+
+	public String getStreet() {
+		return this.street;
+	}
+
+	public void setStreet(String street) {
+		this.street = street;
+	}
+
+	public String getNeighborhood() {
+		return this.neighborhood;
+	}
+
+	public void setNeighborhood(String neighborhood) {
+		this.neighborhood = neighborhood;
+	}
+
+	public String getCity() {
+		return this.city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public State getState() {
+		return this.state;
+	}
+
+	public void setState(State state) {
+		this.state = state;
+	}
+
+	public String getZipCode() {
+		return this.zipCode;
+	}
+
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
+	}
+
+	public String getNumber() {
+		return this.number;
+	}
+
+	public void setNumber(String number) {
+		this.number = number;
+	}
+
+	public String getComplement() {
+		return this.complement;
+	}
+
+	public void setComplement(String complement) {
+		this.complement = complement;
+	}
 
 }

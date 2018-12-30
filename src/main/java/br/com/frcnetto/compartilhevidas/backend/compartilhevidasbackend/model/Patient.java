@@ -1,5 +1,6 @@
 package br.com.frcnetto.compartilhevidas.backend.compartilhevidasbackend.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
@@ -24,7 +25,7 @@ public class Patient extends AbstractEntity<Long>{
   @Column( nullable = false )
   private int age;
 
-  @Column( nullable = false, length = 1 )
+  @Column( nullable = false )
   @Enumerated( EnumType.STRING )
   private Gender gender;
 
@@ -35,7 +36,7 @@ public class Patient extends AbstractEntity<Long>{
   @Enumerated( EnumType.STRING )
   private BloodType bloodType;
 
-  @OneToOne
+  @OneToOne(cascade = CascadeType.ALL)
   private Address address;
 
   public String getName() {
@@ -78,11 +79,11 @@ public class Patient extends AbstractEntity<Long>{
     this.bloodType = bloodType;
   }
 
-  public Address getAdress() {
+  public Address getAddress() {
     return this.address;
   }
 
-  public void setAdress(Address address) {
+  public void setAddress(Address address) {
     this.address = address;
   }
   

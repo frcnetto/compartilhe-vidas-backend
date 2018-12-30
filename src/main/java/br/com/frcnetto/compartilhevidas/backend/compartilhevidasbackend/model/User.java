@@ -14,7 +14,7 @@ public class User extends Patient {
 
   private static final long serialVersionUID = 1L;
 
-  @Column( nullable = false, unique = true )
+  @Column
   private String email;
 
   @OneToMany( mappedBy = "user", cascade = CascadeType.ALL )
