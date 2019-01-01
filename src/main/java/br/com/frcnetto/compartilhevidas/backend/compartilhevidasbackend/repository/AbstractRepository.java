@@ -2,6 +2,7 @@ package br.com.frcnetto.compartilhevidas.backend.compartilhevidasbackend.reposit
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -22,6 +23,12 @@ public abstract class AbstractRepository<T, PK extends Serializable> {
   public T persist(T entity){
     entityManager.persist(entity);
     return entity;
+  }
+
+  public List<T> listAll(){
+    return entityManager
+            .createQuery("from " + entityClass.getSimpleName(), entityClass )
+            .getResultList();
   }
 
 }

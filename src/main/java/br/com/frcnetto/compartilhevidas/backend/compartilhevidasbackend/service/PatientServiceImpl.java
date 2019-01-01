@@ -1,5 +1,7 @@
 package br.com.frcnetto.compartilhevidas.backend.compartilhevidasbackend.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,6 +19,11 @@ public class PatientServiceImpl implements PatientService {
   @Override
   public Patient save( Patient patient ) {
 		return repository.persist( patient );
-	}
+  }
+  
+  @Override
+  public List<Patient> listAll() {
+    return repository.listAll();
+  }
 
 }

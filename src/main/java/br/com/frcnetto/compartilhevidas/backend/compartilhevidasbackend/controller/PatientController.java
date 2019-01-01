@@ -1,7 +1,5 @@
 package br.com.frcnetto.compartilhevidas.backend.compartilhevidasbackend.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,8 +31,7 @@ public class PatientController {
 
   @GetMapping
   public ResponseEntity<Object> list(){
-    
-    return ResponseEntity.ok(new Patient());
+    return ResponseEntity.ok( service.listAll() );
   }
   
 }
