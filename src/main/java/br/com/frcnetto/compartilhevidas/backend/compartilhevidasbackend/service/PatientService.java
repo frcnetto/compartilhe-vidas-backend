@@ -9,5 +9,6 @@ public interface PatientService {
   Patient save( Patient patient );
   List<Patient> listAll();
   Patient edit( Patient patient );
+  Long delete( Long primaryKey );
   
 }

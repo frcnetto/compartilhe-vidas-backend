@@ -35,4 +35,9 @@ public abstract class AbstractRepository<T, PK extends Serializable> {
     return entityManager.merge( entity );
   }
 
+  public PK delete( PK primaryKey ){
+    entityManager.remove( entityManager.getReference(entityClass, primaryKey) );
+    return primaryKey;
+  }
+
 }

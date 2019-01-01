@@ -3,9 +3,12 @@ package br.com.frcnetto.compartilhevidas.backend.compartilhevidasbackend.control
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -43,7 +46,7 @@ public class PatientController {
     }
   }
 
-  @PostMapping( "/edit" )
+  @PutMapping( "/edit" )
   public ResponseEntity<Object> edit( @RequestBody Patient patient ){
     
     try {     
@@ -53,6 +56,19 @@ public class PatientController {
     catch (Exception e) {
       return new ResponseEntity<Object>( e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR );
     }
+  }
+
+  @DeleteMapping( "/delete" )
+  public ResponseEntity<Object> delete( @RequestHeader Long primaryKey ){
+
+    try {
+      return ResponseEntity.ok( service.delete( primaryKey ) );
+    } 
+    
+    catch (Exception e) { 
+      return new ResponseEntity<>( e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR );
+    }
+
   }
   
 }

@@ -31,4 +31,9 @@ public class PatientServiceImpl implements PatientService {
     return repository.edit( patient );
   }
 
+  @Override
+  public Long delete( Long primaryKey ) {
+    return repository.delete( primaryKey );
+  }
+
 }
