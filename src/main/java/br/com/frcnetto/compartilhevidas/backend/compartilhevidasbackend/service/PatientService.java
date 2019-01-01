@@ -6,7 +6,8 @@ import br.com.frcnetto.compartilhevidas.backend.compartilhevidasbackend.model.Pa
 
 public interface PatientService {
 
-  Patient save(Patient patient);
+  Patient save( Patient patient );
   List<Patient> listAll();
+  Patient edit( Patient patient );
   
 }

@@ -31,4 +31,8 @@ public abstract class AbstractRepository<T, PK extends Serializable> {
             .getResultList();
   }
 
+  public T edit( T entity){
+    return entityManager.merge( entity );
+  }
+
 }

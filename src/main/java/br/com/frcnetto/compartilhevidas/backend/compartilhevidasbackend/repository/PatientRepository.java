@@ -6,7 +6,8 @@ import br.com.frcnetto.compartilhevidas.backend.compartilhevidasbackend.model.Pa
 
 public interface PatientRepository {
 
-  Patient persist(Patient patient);
+  Patient persist( Patient patient );
   List<Patient> listAll();
+  Patient edit( Patient patient );
   
 }

@@ -26,4 +26,9 @@ public class PatientServiceImpl implements PatientService {
     return repository.listAll();
   }
 
+  @Override
+  public Patient edit( Patient patient ) {
+    return repository.edit( patient );
+  }
+
 }
